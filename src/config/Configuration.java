@@ -68,7 +68,9 @@ public class Configuration {
 
     public void addUser(User user) {
         User[] newUsers = new User[users.length + 1];
-        System.arraycopy(users, 0, newUsers, 0, users.length);
+        for( int i =0; i < users.length; i++) {
+            newUsers[i] = users[i];
+        }
         newUsers[newUsers.length - 1] = user;
         this.users = newUsers;
     }
